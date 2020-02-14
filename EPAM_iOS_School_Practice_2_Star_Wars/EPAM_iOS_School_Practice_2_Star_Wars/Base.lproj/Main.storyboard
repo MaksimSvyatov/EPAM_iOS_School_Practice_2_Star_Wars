@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="r8g-rm-bA7">
-                            <rect key="frame" x="0.0" y="0.0" width="226" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -47,13 +47,7 @@
                             <outlet property="delegate" destination="lb2-a0-69z" id="djU-Ky-zhj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="StarWarsWiki" id="UAX-zZ-Hfx">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="ZB5-bo-Fpd">
-                            <connections>
-                                <segue destination="PEU-yx-FuH" kind="show" id="A1k-Sb-apc"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="StarWarsWiki" id="UAX-zZ-Hfx"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76S-tU-vyF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationBar contentMode="scaleToFill" id="5l4-Er-5WG">
@@ -309,7 +303,7 @@
             <objects>
                 <navigationController id="n93-Ij-rXD" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YqM-zG-m07">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -321,7 +315,4 @@
             <point key="canvasLocation" x="-1408" y="104"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="A1k-Sb-apc"/>
-    </inferredMetricsTieBreakers>
 </document>
