@@ -1,0 +1,12 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'EPAM_iOS_School_Practice_2_Star_Wars' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for EPAM_iOS_School_Practice_2_Star_Wars
+
+pod 'Alamofire', '~> 5.0'
+
+end
