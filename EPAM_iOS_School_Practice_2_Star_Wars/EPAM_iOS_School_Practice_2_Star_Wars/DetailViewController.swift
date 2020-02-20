@@ -21,22 +21,22 @@ class DetailViewController: UIViewController {
   var data: Visualized?
 
   override func viewDidLoad() {
-    super.viewDidLoad()
-    commonInit()
+      super.viewDidLoad()
+      commonInit()
   }
   
-    func commonInit() {
-    guard let data = data else { return }
-   
-    titleLabel.text = data.titleLabelText
-    
-    item1TitleLabel.text = data.item1.label
-    item1Label.text = data.item1.value
-    
-    item2TitleLabel.text = data.item2.label
-    item2Label.text = data.item2.value
-    
-    item3TitleLabel.text = data.item3.label
-    item3Label.text = data.item3.value
+  func commonInit() {
+      guard let data = data else { return }
+       
+      titleLabel.text = data.titleLabelText
+        
+      item1TitleLabel.text = data.item1.label
+      item1Label.text = data.item1.value
+        
+      item2TitleLabel.text = data.item2.label
+      item2Label.text = data.item2.value
+        
+      item3TitleLabel.text = data.item3.label
+      item3Label.text = data.item3.value
   }
 }

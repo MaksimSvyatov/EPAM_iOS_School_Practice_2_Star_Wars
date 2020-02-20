@@ -18,7 +18,7 @@ class SearchViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
    
     override func viewDidLoad() {
-       super.viewDidLoad()
+        super.viewDidLoad()
         searchBar.delegate = self
     }
     
@@ -34,55 +34,54 @@ class SearchViewController: UITableViewController {
     }
     
    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-     selectedItem = items[indexPath.row]
-     return indexPath
+       selectedItem = items[indexPath.row]
+       return indexPath
    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      guard let destinationVC = segue.destination as? DetailViewController else {
-        return
+        guard let destinationVC = segue.destination as? DetailViewController else {
+            return
       }
-      destinationVC.data = selectedItem
+        destinationVC.data = selectedItem
     }
 }
 
 extension SearchViewController: UISearchBarDelegate {
-  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-    guard let person = searchBar.text else { return }
-    searchPeople(for: person)
-  }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let person = searchBar.text else { return }
+        searchPeople(for: person)
+}
   
-  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-    searchBar.text = nil
-    searchBar.resignFirstResponder()
-    tableView.reloadData()
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = nil
+        searchBar.resignFirstResponder()
+        tableView.reloadData()
   }
 }
 
 extension SearchViewController {
-    
     func searchPeople(for name: String) {
-      let url = "https://swapi.co/api/people"
-      let parameters: [String: String] = ["search": name]
-      AF.request(url, parameters: parameters)
-        .validate()
-        .responseDecodable(of: People.self) { response in
-            
-            if let error = response.error {
-                print("Error: \(error.localizedDescription)")
-                return
-          }
-            
-          guard let people = response.value else { return }
-          self.items = people.all
-          self.tableView.reloadData()
-          if self.items.count == 0 {
+        let url = "https://swapi.co/api/people"
+        let parameters: [String: String] = ["search": name]
+        AF.request(url, parameters: parameters)
+          .validate()
+          .responseDecodable(of: People.self) { response in
                 
-            let alert = UIAlertController(title: "Oops...", message: "No one was found(", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Ok!", style: .default, handler: nil)
-            alert.addAction(action)
-            self.present(alert, animated: true, completion: nil)
-            self.searchBar.text = ""
+                if let error = response.error {
+                    print("Error: \(error.localizedDescription)")
+                    return
+           }
+                
+         guard let people = response.value else { return }
+         self.items = people.all
+         self.tableView.reloadData()
+         if self.items.count == 0 {
+                
+             let alert = UIAlertController(title: "Oops...", message: "No one was found(", preferredStyle: .alert)
+             let action = UIAlertAction(title: "Ok!", style: .default, handler: nil)
+             alert.addAction(action)
+             self.present(alert, animated: true, completion: nil)
+             self.searchBar.text = ""
           }
        }
     }
