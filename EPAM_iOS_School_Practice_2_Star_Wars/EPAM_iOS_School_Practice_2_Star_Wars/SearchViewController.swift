@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import RealmSwift
 
 class SearchViewController: UITableViewController {
     
@@ -51,7 +52,7 @@ extension SearchViewController: UISearchBarDelegate {
         guard let person = searchBar.text else { return }
         searchPeople(for: person)
 }
-  
+
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = nil
         searchBar.resignFirstResponder()

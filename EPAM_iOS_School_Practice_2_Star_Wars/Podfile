@@ -9,4 +9,6 @@ target 'EPAM_iOS_School_Practice_2_Star_Wars' do
 
 pod 'Alamofire', '~> 5.0'
 
+pod 'RealmSwift'
+
 end
