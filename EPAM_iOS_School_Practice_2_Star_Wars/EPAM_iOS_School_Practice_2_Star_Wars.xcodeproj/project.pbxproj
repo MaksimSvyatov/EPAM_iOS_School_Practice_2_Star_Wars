@@ -18,7 +18,8 @@
 		9434537D23FA9F19004705D1 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434537C23FA9F19004705D1 /* People.swift */; };
 		9434537F23FA9F7A004705D1 /* Visualized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434537E23FA9F7A004705D1 /* Visualized.swift */; };
 		9438BE8523FC0B42001A4BE0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438BE8423FC0B42001A4BE0 /* DetailViewController.swift */; };
-		94A186C223F83B340076B90A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A186C123F83B340076B90A /* SearchViewController.swift */; };
+		94FA67A82402CFB600EB91BB /* RealmDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA67A72402CFB600EB91BB /* RealmDataBase.swift */; };
+		94FC26C02402D921007E928C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A186C123F83B340076B90A /* SearchViewController.swift */; };
 		DFE3FDE10176EF3A31110E5F /* Pods_EPAM_iOS_School_Practice_2_Star_Wars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCED8AAA15CA473CEAAE2CE /* Pods_EPAM_iOS_School_Practice_2_Star_Wars.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		9434537E23FA9F7A004705D1 /* Visualized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visualized.swift; sourceTree = "<group>"; };
 		9438BE8423FC0B42001A4BE0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		94A186C123F83B340076B90A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		94FA67A72402CFB600EB91BB /* RealmDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				9434537923FA8A6F004705D1 /* Networking */,
 				942F7C3523F6872300F9D9B2 /* AppDelegate.swift */,
+				94FA67A72402CFB600EB91BB /* RealmDataBase.swift */,
 				942F7C3723F6872300F9D9B2 /* SceneDelegate.swift */,
 				942F7C3923F6872300F9D9B2 /* ViewController.swift */,
 				94A186C123F83B340076B90A /* SearchViewController.swift */,
@@ -240,8 +243,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94FC26C02402D921007E928C /* SearchViewController.swift in Sources */,
 				9438BE8523FC0B42001A4BE0 /* DetailViewController.swift in Sources */,
-				94A186C223F83B340076B90A /* SearchViewController.swift in Sources */,
+				94FA67A82402CFB600EB91BB /* RealmDataBase.swift in Sources */,
 				942F7C3A23F6872300F9D9B2 /* ViewController.swift in Sources */,
 				942F7C4023F6872300F9D9B2 /* EPAM_iOS_School_Practice_2_Star_Wars.xcdatamodeld in Sources */,
 				942F7C3623F6872300F9D9B2 /* AppDelegate.swift in Sources */,

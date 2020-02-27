@@ -12,6 +12,12 @@ import RealmSwift
 
 class SearchViewController: UITableViewController {
     
+//    //let realm = try! Realm()
+//    
+//    lazy var realm: Realm = {
+//        return try! Realm()
+//    }()
+    
     var items: [Visualized] = []
     var people: [Person] = []
     var selectedItem: Visualized?
@@ -36,6 +42,16 @@ class SearchViewController: UITableViewController {
     
    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
        selectedItem = items[indexPath.row]
+    
+    //guard let realmSelectedItem = selectedItem as? Object else { return }
+//       try! realm.write {
+//        realm.add((selectedItem as? Object)!)
+//       }
+    
+    //tableView.reloadData()
+    
+    
+    
        return indexPath
    }
     
