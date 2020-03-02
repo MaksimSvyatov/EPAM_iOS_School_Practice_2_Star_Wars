@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
-struct Person: Decodable {
-    let name: String
-    let height: String
-    let mass: String
-    let birthYear: String
-    let gender: String
+class Person: Object, Decodable {
+    @objc dynamic var name: String
+    @objc dynamic var height: String
+    @objc dynamic var mass: String
+    @objc dynamic var birthYear: String
+    @objc dynamic var gender: String
       
     enum CodingKeys: String, CodingKey {
         case name

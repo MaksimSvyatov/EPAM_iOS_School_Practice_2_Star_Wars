@@ -41,7 +41,7 @@ class DetailViewController: UIViewController {
   
   func commonInit() {
       guard let data = data else { return }
-    print(data)
+    //print(data)
        
       titleLabel.text = data.titleLabelText
         
