@@ -18,21 +18,7 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var item3TitleLabel: UILabel!
   @IBOutlet weak var item3Label: UILabel!
   
-  var data: Visualized? // Она приходит как Visualized и надо как-то сделать модель для Realm, чтобы можно
-    // было положить туда результат выбора, который сохранён в data в этом файле и selectedItem в файле
-    // SearchViewController
-    // Осталось понять как это сделать
-    
-    
-    
-    
-    
-    
-    //let realm = try! Realm()
-       
-//       lazy var realm: Realm = {
-//           return try! Realm()
-//       }()
+  var data: Visualized?
 
   override func viewDidLoad() {
       super.viewDidLoad()
@@ -41,7 +27,6 @@ class DetailViewController: UIViewController {
   
   func commonInit() {
       guard let data = data else { return }
-    //print(data)
        
       titleLabel.text = data.titleLabelText
         

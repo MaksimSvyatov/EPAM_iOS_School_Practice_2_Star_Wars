@@ -31,8 +31,12 @@ class PersonService: PersonServiceProtocol {
         let predicate = NSPredicate(format: "name = %@", person.name)
         let list = realm.objects(Person.self).filter(predicate)
         if list.isEmpty {
-            try! realm.write {
-                realm.add(person)
+            do {
+                try realm.write {
+                    realm.add(person)
+                }
+            } catch {
+                return
             }
         }
     }
@@ -40,21 +44,21 @@ class PersonService: PersonServiceProtocol {
     func save(personList: [Person]) {
         for person in personList {
             save(person: person)
-            //print(personList.count)
         }
     }
     
     func delete(person: Person) {
-        try! realm.write {
-            realm.delete(person)
+        do {
+            try realm.write {
+                realm.delete(person)
+            }
+        } catch {
+            return
         }
     }
     
     func getAllPersons() -> Results<Person> {
         let list = realm.objects(Person.self)
-
-          //print(list)
-          //print(list.count)
         return list
     }
 }

@@ -13,9 +13,8 @@ class RecentPersonsController: UITableViewController {
     
     var personService: PersonServiceProtocol = PersonService()
     var recentItems: Results<Person>!
+    var selectedItem: Visualized?
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         //print(recentItems ?? "0")
@@ -24,13 +23,14 @@ class RecentPersonsController: UITableViewController {
         //getAllPersons()
         // Do any additional setup after loading the view.
         //showRecentItems()
+        //print(recentItems.count)
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //print(recentItems ?? "0")
-        //showRecentItems()
+        showRecentItems()
     }
 
     func showRecentItems() {
@@ -39,43 +39,66 @@ class RecentPersonsController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    //self.items = people.all
-//    self.personServise.save(personList: people.all)
-//    self.tableView.reloadData()
-//   var recentItems = PersonService.getAllPersons()
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(recentItems?.count)
         return recentItems?.count ?? 1
-        
-        }
+    }
 
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            if recentItems?.count == nil {
+            if recentItems.count == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "recentPersonsCell", for: indexPath)
                 //let item = recentItems[indexPath.row]
-                    cell.textLabel?.text = "No recents"
+                cell.textLabel?.text = "No recents"
                 return cell
-                
-            }
+
+            } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "recentPersonsCell", for: indexPath)
             let item = recentItems?[indexPath.row]
             cell.textLabel?.text = item?.name
             return cell
-           
-        }
-
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
+            }
     }
-    
+            
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            //personService.delete() // Удаление элеента из базы данных
-            tableView.deleteRows(at: [indexPath], with: .left)
-            tableView.reloadData()
-        }
-    }
+               selectedItem = recentItems[indexPath.row]
+               personService.delete(person: (selectedItem as? Person ?? nil)!) // Удаление элемента из базы данных
+               tableView.deleteRows(at: [indexPath], with: .left)
+               tableView.reloadData()
+       
+           }
+    
+}
+
+//    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .delete
+//    }
+//
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            //personService.delete() // Удаление элеента из базы данных
+//            tableView.deleteRows(at: [indexPath], with: .left)
+//            tableView.reloadData()
+//        }
+    
+    
+    
+    
+    
+    
+    
+   
+    //
+    //}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 //       override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
 //           //selectedItem = items[indexPath.row]
@@ -89,7 +112,7 @@ class RecentPersonsController: UITableViewController {
 //          }
 //            destinationVC.data = selectedItem
 //        }
-    }
+
 
 
 
