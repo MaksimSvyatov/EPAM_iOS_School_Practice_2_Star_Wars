@@ -27,11 +27,11 @@ class SearchService: SearchServiceProtocol {
                    return
                }
             
-    guard let people = response.value else {
-        completion (nil, nil)
-        return }
-            
-    completion (people, nil)
+            guard let people = response.value else {
+                completion (nil, nil)
+                return }
+                    
+            completion (people, nil)
          
         }
     }

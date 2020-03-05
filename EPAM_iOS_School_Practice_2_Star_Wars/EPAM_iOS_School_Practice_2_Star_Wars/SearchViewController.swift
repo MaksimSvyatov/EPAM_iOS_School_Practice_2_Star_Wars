@@ -11,13 +11,7 @@ import Alamofire
 import RealmSwift
 
 class SearchViewController: UITableViewController {
-    
-//    //let realm = try! Realm()
-//
-//    lazy var realm: Realm = {
-//        return try! Realm()
-//    }()
-    
+
     var items: [Visualized] = []
     var people: [Person] = []
     var selectedItem: Visualized?
@@ -43,24 +37,16 @@ class SearchViewController: UITableViewController {
     }
     
    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-       selectedItem = items[indexPath.row]
-    
-    //guard let realmSelectedItem = selectedItem as? Object else { return }
-//       try! realm.write {
-//        realm.add((selectedItem as? Object)!)
-//       }
-    
-    //tableView.reloadData()
-    
+        selectedItem = items[indexPath.row]
         return indexPath
    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destinationVC = segue.destination as? DetailViewController else {
             return
-      }
-        destinationVC.data = selectedItem
+        }
         
+        destinationVC.data = selectedItem 
     }
 }
 
@@ -69,7 +55,6 @@ extension SearchViewController: UISearchBarDelegate {
         guard let person = searchBar.text else { return }
         searchService.searchPeople(for: person) { [weak self] (people, error) in
             guard let self = self else { return }
-            
             
             if error != nil {
                 let alert = UIAlertController(title: "Oops...", message: "Error: \(error!.localizedDescription)", preferredStyle: .alert)
@@ -92,12 +77,13 @@ extension SearchViewController: UISearchBarDelegate {
                     self.searchBar.text = ""
                 }
             }
+        }
     }
-
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = nil
+        searchBar.text = ""
         searchBar.resignFirstResponder()
+        items.removeAll()
         tableView.reloadData()
     }
-}
 }

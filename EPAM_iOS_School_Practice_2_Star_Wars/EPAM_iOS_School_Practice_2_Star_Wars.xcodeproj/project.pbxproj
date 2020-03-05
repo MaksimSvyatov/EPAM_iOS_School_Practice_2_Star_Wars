@@ -20,7 +20,6 @@
 		9438BE8523FC0B42001A4BE0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438BE8423FC0B42001A4BE0 /* DetailViewController.swift */; };
 		9441876624092E3F00E6C242 /* PersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9441876524092E3F00E6C242 /* PersonService.swift */; };
 		94EC7ABC2407CA06000FCFF3 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EC7ABB2407CA06000FCFF3 /* SearchService.swift */; };
-		94FA67A82402CFB600EB91BB /* RealmDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA67A72402CFB600EB91BB /* RealmDataBase.swift */; };
 		94FC26C02402D921007E928C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A186C123F83B340076B90A /* SearchViewController.swift */; };
 		DFE3FDE10176EF3A31110E5F /* Pods_EPAM_iOS_School_Practice_2_Star_Wars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCED8AAA15CA473CEAAE2CE /* Pods_EPAM_iOS_School_Practice_2_Star_Wars.framework */; };
 /* End PBXBuildFile section */
@@ -45,7 +44,6 @@
 		9441876524092E3F00E6C242 /* PersonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonService.swift; sourceTree = "<group>"; };
 		94A186C123F83B340076B90A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		94EC7ABB2407CA06000FCFF3 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
-		94FA67A72402CFB600EB91BB /* RealmDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +90,6 @@
 				9441876424092E2700E6C242 /* DataBase */,
 				9434537923FA8A6F004705D1 /* Model */,
 				942F7C3523F6872300F9D9B2 /* AppDelegate.swift */,
-				94FA67A72402CFB600EB91BB /* RealmDataBase.swift */,
 				942F7C3723F6872300F9D9B2 /* SceneDelegate.swift */,
 				942F7C3923F6872300F9D9B2 /* RecentPersonsController.swift */,
 				94A186C123F83B340076B90A /* SearchViewController.swift */,
@@ -268,7 +265,6 @@
 				94FC26C02402D921007E928C /* SearchViewController.swift in Sources */,
 				9438BE8523FC0B42001A4BE0 /* DetailViewController.swift in Sources */,
 				9441876624092E3F00E6C242 /* PersonService.swift in Sources */,
-				94FA67A82402CFB600EB91BB /* RealmDataBase.swift in Sources */,
 				94EC7ABC2407CA06000FCFF3 /* SearchService.swift in Sources */,
 				942F7C3A23F6872300F9D9B2 /* RecentPersonsController.swift in Sources */,
 				942F7C4023F6872300F9D9B2 /* EPAM_iOS_School_Practice_2_Star_Wars.xcdatamodeld in Sources */,

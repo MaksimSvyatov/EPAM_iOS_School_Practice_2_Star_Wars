@@ -14,19 +14,14 @@ protocol PersonServiceProtocol {
     func save(personList: [Person])
     func delete(person: Person)
     func getAllPersons() -> Results<Person>
-    //var list: Results<Person>! { get }
 }
 
 class PersonService: PersonServiceProtocol {
     
-    //var list: Results<Person>!
-    
     lazy var realm: Realm = {
         return try! Realm()
     }()
-    
-    //let list: Results<Person>! = Results<Person>()
-    
+
     func save(person: Person) {
         let predicate = NSPredicate(format: "name = %@", person.name)
         let list = realm.objects(Person.self).filter(predicate)
