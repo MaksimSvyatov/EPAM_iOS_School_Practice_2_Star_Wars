@@ -15,30 +15,12 @@ class Person: Object, Decodable {
     @objc dynamic var mass: String
     @objc dynamic var birthYear: String
     @objc dynamic var gender: String
-      
+    
     enum CodingKeys: String, CodingKey {
         case name
         case height
         case mass
         case birthYear = "birth_year"
         case gender
-    }
-}
-
-extension Person: Visualized {
-    var titleLabelText: String {
-        name
-    }
-      
-    var item1: (label: String, value: String) {
-        ("HEIGHT", height)
-    }
-      
-    var item2: (label: String, value: String) {
-        ("MASS", mass)
-    }
-      
-    var item3: (label: String, value: String) {
-        ("BIRTH YEAR", birthYear)
     }
 }

@@ -22,24 +22,25 @@ class RecentPersonsController: UITableViewController {
         showRecentItems()
         showRecentLabelText()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         showRecentLabelText()
         showRecentItems()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = recentItems?.count else { return 0 }
+        guard let count = recentItems?.count else {
+            return 0 }
         return count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recentPersonsCell", for: indexPath)
         let item = recentItems?[indexPath.row]
         cell.textLabel?.text = item?.name
         return cell
     }
-   
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let item = recentItems[indexPath.row]
         personService.delete(person: item)
@@ -63,7 +64,7 @@ class RecentPersonsController: UITableViewController {
     
     func showRecentItems() {
         recentItems = personService.getAllPersons()
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
     func showRecentLabelText() {

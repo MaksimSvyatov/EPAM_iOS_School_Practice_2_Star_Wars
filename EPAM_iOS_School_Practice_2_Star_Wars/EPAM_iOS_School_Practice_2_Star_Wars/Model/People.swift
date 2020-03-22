@@ -11,7 +11,7 @@ import UIKit
 struct People: Decodable {
     let count: Int
     let all: [Person]
-      
+    
     enum CodingKeys: String, CodingKey {
         case count
         case all = "results"

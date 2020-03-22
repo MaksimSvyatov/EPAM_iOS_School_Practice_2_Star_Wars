@@ -21,7 +21,7 @@ class PersonService: PersonServiceProtocol {
     lazy var realm: Realm = {
         return try! Realm()
     }()
-
+    
     func save(person: Person) {
         let predicate = NSPredicate(format: "name = %@", person.name)
         let list = realm.objects(Person.self).filter(predicate)
@@ -37,9 +37,7 @@ class PersonService: PersonServiceProtocol {
     }
     
     func save(personList: [Person]) {
-        for person in personList {
-            save(person: person)
-        }
+        personList.forEach { save(person: $0) }
     }
     
     func delete(person: Person) {

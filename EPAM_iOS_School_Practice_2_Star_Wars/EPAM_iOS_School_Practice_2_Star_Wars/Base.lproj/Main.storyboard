@@ -119,13 +119,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Person" id="YwI-Ub-0Ld"/>
                     <connections>
-                        <outlet property="item1Label" destination="qFq-Nq-UZr" id="MsX-aq-vbQ"/>
-                        <outlet property="item1TitleLabel" destination="Gdk-1g-7yz" id="jXe-lE-svh"/>
-                        <outlet property="item2Label" destination="0fE-5Z-uok" id="rXP-gl-K7e"/>
-                        <outlet property="item2TitleLabel" destination="lo6-3I-T9e" id="EAE-bw-Mhd"/>
-                        <outlet property="item3Label" destination="q4G-f9-YLZ" id="6Wu-n2-cDu"/>
-                        <outlet property="item3TitleLabel" destination="kRB-ir-Zmh" id="gMn-Dn-vVA"/>
-                        <outlet property="titleLabel" destination="oMl-lF-zul" id="6az-US-Etd"/>
+                        <outlet property="birthYearLabel" destination="qFq-Nq-UZr" id="plr-Yk-7w4"/>
+                        <outlet property="birthYearTitleLabel" destination="Gdk-1g-7yz" id="ptr-0v-UWj"/>
+                        <outlet property="heightLabel" destination="0fE-5Z-uok" id="hMQ-sd-spQ"/>
+                        <outlet property="heightTitleLabel" destination="lo6-3I-T9e" id="qGh-rZ-PHQ"/>
+                        <outlet property="massLabel" destination="q4G-f9-YLZ" id="cJi-NT-Q7D"/>
+                        <outlet property="massTitleLabel" destination="kRB-ir-Zmh" id="uZB-c8-JZh"/>
+                        <outlet property="nameLabel" destination="oMl-lF-zul" id="s1F-sh-163"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nz-iC-gK2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
